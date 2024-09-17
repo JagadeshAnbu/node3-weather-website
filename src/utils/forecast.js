@@ -7,7 +7,7 @@ const forecast = (latitude, longitude, callback) => {
     axios.get(url)
         .then(response => {
             const { main, visibility, timezone } = response.data;
-            callback(null, `The temperature is ${main.temp}°C, visibility is ${visibility} meters, and the timezone is ${timezone}`);
+            callback(null, `The temperature is ${main.temp}°C, humitity is ${main.humidity}, visibility is ${visibility} meters, and the timezone is ${timezone} `);
         })
         .catch(error => {
             callback(`Error fetching data: ${error}`, null);
